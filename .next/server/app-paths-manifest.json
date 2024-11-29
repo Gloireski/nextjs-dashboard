@@ -1,3 +1,4 @@
 {
+  "/dashboard/invoices/create/page": "app/dashboard/invoices/create/page.js",
   "/dashboard/invoices/page": "app/dashboard/invoices/page.js"
 }

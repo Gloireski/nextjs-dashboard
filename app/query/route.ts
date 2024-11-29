@@ -1,5 +1,5 @@
-import { db, sql } from "@vercel/postgres";
-import { Revenue } from "../lib/definitions";
+import { db } from "@vercel/postgres";
+// import { Revenue } from "../lib/definitions";
 
 const client = await db.connect();
 

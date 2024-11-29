@@ -667,17 +667,13 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 {
 __turbopack_export_namespace__(__turbopack_import__("[project]/app/dashboard/invoices/create/page.tsx [app-rsc] (ecmascript)"));
 }}),
-"[project]/.next-internal/server/app/dashboard/invoices/create/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/lib/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)": (function(__turbopack_context__) {
+"[project]/.next-internal/server/app/dashboard/invoices/create/page/actions.js [app-rsc] (ecmascript)": (function(__turbopack_context__) {
 
 var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, x: __turbopack_external_require__, y: __turbopack_external_import__, m: module, e: exports, t: require } = __turbopack_context__;
 {
-__turbopack_export_value__({
-    '344e743686735202b1d7d8cdb5a2ba161e7f837f': (...args)=>Promise.resolve(__turbopack_require__("[project]/app/lib/actions.ts [app-rsc] (ecmascript)")).then((mod)=>(0, mod['createInvoice'])(...args)),
-    '9f9b112f9b8e50a0388c8a6e4f075faaa288ec94': (...args)=>Promise.resolve(__turbopack_require__("[project]/app/lib/actions.ts [app-rsc] (ecmascript)")).then((mod)=>(0, mod['updateInvoice'])(...args)),
-    'fdda32d133c9013289279e5c6922829d9811e4ab': (...args)=>Promise.resolve(__turbopack_require__("[project]/app/lib/actions.ts [app-rsc] (ecmascript)")).then((mod)=>(0, mod['deleteInvoice'])(...args))
-});
+__turbopack_export_value__({});
 }}),
 
 };
 
-//# sourceMappingURL=%5Broot%20of%20the%20server%5D__921bef._.js.map
+//# sourceMappingURL=%5Broot%20of%20the%20server%5D__d25313._.js.map
