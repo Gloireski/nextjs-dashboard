@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/dashboard/invoices/[id]/edit/not-found.tsx"],"sourcesContent":["import Link from 'next/link';\nimport { FaceFrownIcon } from '@heroicons/react/24/outline';\n \nexport default function NotFound() {\n  return (\n    <main className=\"flex h-full flex-col items-center justify-center gap-2\">\n      <FaceFrownIcon className=\"w-10 text-gray-400\" />\n      <h2 className=\"text-xl font-semibold\">404 Not Found</h2>\n      <p>Could not find the requested invoice.</p>\n      <Link\n        href=\"/dashboard/invoices\"\n        className=\"mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-400\"\n      >\n        Go Back\n      </Link>\n    </main>\n  );\n}"],"names":[],"mappings":";;;;AAAA;AACA;;;;AAEe,SAAS;IACtB,qBACE,ucAAC;QAAK,WAAU;;0BACd,ucAAC,8UAAA,CAAA,gBAAa;gBAAC,WAAU;;;;;;0BACzB,ucAAC;gBAAG,WAAU;0BAAwB;;;;;;0BACtC,ucAAC;0BAAE;;;;;;0BACH,ucAAC,qVAAA,CAAA,UAAI;gBACH,MAAK;gBACL,WAAU;0BACX;;;;;;;;;;;;AAKP"}},
+    {"offset": {"line": 58, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

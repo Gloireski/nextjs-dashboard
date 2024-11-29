@@ -273,7 +273,7 @@ const ITEMS_PER_PAGE = 6;
 async function fetchFilteredInvoices(query, currentPage) {
     const offset = (currentPage - 1) * ITEMS_PER_PAGE;
     try {
-        const invoices = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$vercel$2b$postgres$40$0$2e$8$2e$0$2f$node_modules$2f40$vercel$2f$postgres$2f$dist$2f$chunk$2d$WDBQYBZQ$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["sql"]`
+        const invoices = await client.sql`
       SELECT
         invoices.id,
         invoices.amount,
@@ -301,7 +301,7 @@ async function fetchFilteredInvoices(query, currentPage) {
 }
 async function fetchInvoicesPages(query) {
     try {
-        const count = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$vercel$2b$postgres$40$0$2e$8$2e$0$2f$node_modules$2f40$vercel$2f$postgres$2f$dist$2f$chunk$2d$WDBQYBZQ$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["sql"]`SELECT COUNT(*)
+        const count = await client.sql`SELECT COUNT(*)
     FROM invoices
     JOIN customers ON invoices.customer_id = customers.id
     WHERE
@@ -320,7 +320,7 @@ async function fetchInvoicesPages(query) {
 }
 async function fetchInvoiceById(id) {
     try {
-        const data = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$vercel$2b$postgres$40$0$2e$8$2e$0$2f$node_modules$2f40$vercel$2f$postgres$2f$dist$2f$chunk$2d$WDBQYBZQ$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["sql"]`
+        const data = await client.sql`
       SELECT
         invoices.id,
         invoices.customer_id,
@@ -334,6 +334,7 @@ async function fetchInvoiceById(id) {
                 // Convert amount from cents to dollars
                 amount: invoice.amount / 100
             }));
+        console.log(invoice); // Invoice is an empty array []
         return invoice[0];
     } catch (error) {
         console.error('Database Error:', error);
@@ -342,7 +343,7 @@ async function fetchInvoiceById(id) {
 }
 async function fetchCustomers() {
     try {
-        const data = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$vercel$2b$postgres$40$0$2e$8$2e$0$2f$node_modules$2f40$vercel$2f$postgres$2f$dist$2f$chunk$2d$WDBQYBZQ$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["sql"]`
+        const data = await client.sql`
       SELECT
         id,
         name
@@ -358,7 +359,7 @@ async function fetchCustomers() {
 }
 async function fetchFilteredCustomers(query) {
     try {
-        const data = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$vercel$2b$postgres$40$0$2e$8$2e$0$2f$node_modules$2f40$vercel$2f$postgres$2f$dist$2f$chunk$2d$WDBQYBZQ$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["sql"]`
+        const data = await client.sql`
 		SELECT
 		  customers.id,
 		  customers.name,

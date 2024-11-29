@@ -46,7 +46,8 @@ function Search({ placeholder }) {
                 placeholder: placeholder,
                 onChange: (e)=>{
                     handleSearch(e.target.value);
-                }
+                },
+                defaultValue: searchParams.get('query')?.toString()
             }, void 0, false, {
                 fileName: "[project]/app/ui/search.tsx",
                 lineNumber: 28,
@@ -56,7 +57,7 @@ function Search({ placeholder }) {
                 className: "absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900"
             }, void 0, false, {
                 fileName: "[project]/app/ui/search.tsx",
-                lineNumber: 35,
+                lineNumber: 36,
                 columnNumber: 7
             }, this)
         ]
