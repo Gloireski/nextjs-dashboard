@@ -32,7 +32,7 @@ export async function fetchRevenue() {
 export async function fetchLatestInvoices() {
   try {
     // await new Promise((resolve) => setTimeout(resolve, 3000));
-    const data = await client.sql<LatestInvoiceRaw>`
+    const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
       FROM invoices
       JOIN customers ON invoices.customer_id = customers.id
@@ -56,9 +56,9 @@ export async function fetchCardData() {
     // However, we are intentionally splitting them to demonstrate
     // how to initialize multiple queries in parallel with JS.
 
-    const invoiceCountPromise = client.sql`SELECT COUNT(*) FROM invoices`;
-    const customerCountPromise = client.sql`SELECT COUNT(*) FROM customers`;
-    const invoiceStatusPromise = client.sql`SELECT
+    const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
+    const customerCountPromise = sql`SELECT COUNT(*) FROM customers`;
+    const invoiceStatusPromise = sql`SELECT
          SUM(CASE WHEN status = 'paid' THEN amount ELSE 0 END) AS "paid",
          SUM(CASE WHEN status = 'pending' THEN amount ELSE 0 END) AS "pending"
          FROM invoices`;
@@ -124,7 +124,7 @@ export async function fetchFilteredInvoices(
 
 export async function fetchInvoicesPages(query: string) {
   try {
-    const count = await client.sql`SELECT COUNT(*)
+    const count = await sql`SELECT COUNT(*)
     FROM invoices
     JOIN customers ON invoices.customer_id = customers.id
     WHERE
@@ -145,7 +145,7 @@ export async function fetchInvoicesPages(query: string) {
 
 export async function fetchInvoiceById(id: string) {
   try {
-    const data = await client.sql<InvoiceForm>`
+    const data = await sql<InvoiceForm>`
       SELECT
         invoices.id,
         invoices.customer_id,
@@ -170,7 +170,7 @@ export async function fetchInvoiceById(id: string) {
 
 export async function fetchCustomers() {
   try {
-    const data = await client.sql<CustomerField>`
+    const data = await sql<CustomerField>`
       SELECT
         id,
         name
@@ -188,7 +188,7 @@ export async function fetchCustomers() {
 
 export async function fetchFilteredCustomers(query: string) {
   try {
-    const data = await client.sql<CustomersTableType>`
+    const data = await sql<CustomersTableType>`
 		SELECT
 		  customers.id,
 		  customers.name,

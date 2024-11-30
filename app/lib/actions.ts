@@ -4,11 +4,11 @@
 // import { signIn } from '@/auth';
 // import { AuthError } from 'next-auth';
 import { z } from "zod";
-import { db } from '@vercel/postgres';
+import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from "next/navigation";
 
-const client = await db.connect();
+// const client = await db.connect();
 const FormSchema = z.object({
   id: z.string(),
   customerId: z.string({
@@ -87,7 +87,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
   console.log(customerId+' '+date+' '+amount);
 
   try {
-    await client.sql`
+    await sql`
     INSERT INTO invoices (customer_id, amount, status, date)
     VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
   `;
@@ -124,7 +124,7 @@ export async function updateInvoice(
     const amountInCents = amount * 100;
    
     try{
-        await client.sql`
+        await sql`
         UPDATE invoices
         SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
         WHERE id = ${id}
@@ -144,7 +144,7 @@ export async function updateInvoice(
     // throw new Error('Failed to Delete Invoice');
 
     try {
-      await client.sql`DELETE FROM invoices WHERE id = ${id}`;
+      await sql`DELETE FROM invoices WHERE id = ${id}`;
       return { message: 'Deleted Invoice.' };
     } catch(error) {
         console.error('Database Error:', error);
