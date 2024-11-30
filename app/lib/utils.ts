@@ -1,4 +1,5 @@
 import { Revenue } from './definitions';
+import { db } from '@vercel/postgres';
 
 export const formatCurrency = (amount: number) => {
   return (amount / 100).toLocaleString('en-US', {
@@ -67,3 +68,8 @@ export const generatePagination = (currentPage: number, totalPages: number) => {
     totalPages,
   ];
 };
+
+export async function Client (){
+  const client = await db.connect();
+  return client;
+}

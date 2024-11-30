@@ -1,4 +1,13 @@
 {
-  "node": {},
+  "node": {
+    "75fbe48fa3e35c63192f88d1c60e680fded3dbd1": {
+      "workers": {
+        "app/dashboard/customers/page": "[project]/.next-internal/server/app/dashboard/customers/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/ui/dashboard/sidenav.tsx [app-rsc] (ecmascript)\" } [app-rsc] (ecmascript)"
+      },
+      "layer": {
+        "app/dashboard/customers/page": "rsc"
+      }
+    }
+  },
   "edge": {}
 }

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 12, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/app/opengraph-image.png.mjs (structured image object)"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 1686, height: 882 }\n"],"names":[],"mappings":";;;AAAA;;uCACe;IAAE,KAAA,sHAAA,CAAA,UAAG;IAAE,OAAO;IAAM,QAAQ;AAAI"}},
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
